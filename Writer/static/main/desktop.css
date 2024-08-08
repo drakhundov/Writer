@@ -1,0 +1,16 @@
+button {
+    position: absolute;
+    top: 10px;
+}
+
+.registration {
+    right: 10px;
+}
+
+.last-articles {
+    right: 150px;
+}
+
+.new-article {
+    right: 320px;
+}

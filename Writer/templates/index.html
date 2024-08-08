@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title> Writer </title>
+        <meta charset = "utf-8">
+
+        {% load static %}
+        <link rel = "shortuct icon" type = "image/png" href = "{% static 'favicon.png' %}">
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'main/style.css' %}">
+        <link media = "screen" rel = "stylesheet" type = "text/css" href = "{% static 'main/desktop.css' %}">
+        <link media = "handheld" rel = "stylesheet" type = "text/css" href = "{% static 'main/mobile.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <span class = "title"> Writer </span>
+        </header>
+
+        <main>
+            <form action = "{% url 'articles:last' %}">
+                <button type = "submit" class = "last-articles"> Last articles </button>
+            </form>
+
+            <form action = "{% url 'users:register' %}">
+                <button type = "submit" class = "registration"> Register </button>
+            </form>
+
+            <form action = "{% url 'articles:new' %}">
+                <button type = "submit" class = "new-article"> New Article </button>
+            </form>
+        </main>
+    </body>
+</html>

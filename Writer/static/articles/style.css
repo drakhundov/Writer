@@ -1,0 +1,57 @@
+@import url("../style.css");
+@import url("../link.css");
+@import url("../title.css");
+@import url("../list.css");
+@import url("../button.css");
+@import url("../text-input.css");
+
+
+/* article */
+.article-box {
+    background-color: orange;
+    border: 3px solid rgb(243, 3, 3);
+}
+
+.article-title {
+    color: #c72808;
+
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Courier New';
+
+    margin-left: 15px;
+}
+
+.article-text {
+    color: #0f1adb;
+    
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Times New Roman';
+}
+
+
+/* comment */
+.comment-box {
+    background-color: orangered;
+}
+
+.comment-author {
+    color: rgb(0, 26, 255);
+
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    margin: 10px;
+}
+
+.comment-text {
+    color: orange;
+
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    margin: 10px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title> Writer </title>
+        <meta charset = "utf-8">
+
+        {% load static %}
+        <link rel = "shortcut icon" type = "image/png" href = "{% static 'favicon.png' %}">
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'polls/style.css' %}">
+        <link media = "screen" rel = "stylesheet" type = "text/css" href = "{% static 'polls/desktop.css' %}">
+        <link media = "handheld" rel = "stylesheet" type = "text/css" href = "{% static 'polls/mobile.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <span class = "title"> Writer </span>
+            {% block header_content %} {% endblock %}
+        </header>
+
+        <main>
+            {% block main_content %} {% endblock %}
+        </main>
+
+        <nav>
+            {% block navigation %} {% endblock %}
+        </nav>
+
+        <footer>
+            {% block footer_conten %} {% endblock %}
+        </footer>
+    </body>
+</html>

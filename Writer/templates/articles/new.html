@@ -1,0 +1,15 @@
+{% extends 'articles/base.html' %}
+
+{% block title %} New Article {% endblock %}
+
+
+{% block main_content %}
+    <form action = "{% url 'articles:save' %}" method = "post">
+        {% csrf_token %}
+
+        <input class = "text-input" type = "text" required placeholder = "Title" name = "title"> <br>
+        <textarea class = "text-input" cols = "50" rows = "30" required speellcheck = "false" placeholder = "Text" name = "text"></textarea> <br>
+
+        <button type = "submit"> Save Article </button>
+    </form>
+{% endblock %}

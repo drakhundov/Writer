@@ -1,0 +1,21 @@
+{% extends 'articles/base.html' %}
+
+{% block title %} Last Articles {% endblock %}
+
+
+{% block navigation %}
+    {% if last_articles %}
+        <ul class = "circle">
+            {% for article in last_articles %}
+                <li> <a href = "{% url 'articles:detail' article.id %}"> {{ article.title }} </a> </li>
+            {% endfor %}
+        </ul>
+
+    {% else %} <p> <b><em> We hasn't articles now </em></b> </p>
+
+    {% endif %}
+
+    <form action = "{% url 'articles:new' %}">
+        <button type = "submit"> Create New Article </button>
+    </form>
+{% endblock %}

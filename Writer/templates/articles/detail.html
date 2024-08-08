@@ -1,0 +1,28 @@
+{% extends 'articles/base.html' %}
+
+{% block title %} {{ article.title }} {% endblock %}
+
+
+{% block main_content %}
+    <article>
+        <div class = "article-box">
+            <h1 class = "article-title"> {{ article.title }} </h1>
+            <p class = "article-text"> {{ article.text }} </p>
+        </div> <br>
+    </article>
+    
+    {% for comment in article.comment_set.all %}
+        <div class = "comment-box">
+            <strong class = "comment-author"> {{ comment.author }} </strong>
+            <h2 class = "comment-text"> {{ comment.text }} </h2>
+        </div> <br>
+    {% endfor %}
+
+    <form action = "{% url 'articles:leave_comment' article.id %}" method = "post">
+        {% csrf_token %}
+
+        <input class = "text-input" type = "text" required placeholder = "Your Name" name = "username"> <br>
+        <textarea class = "text-input" cols = "30" rows = "10" required spellcheck = "false" placeholder = "Comment Text" name = "text"></textarea> <br>
+        <button type = "submit"> Leave Comment </button>
+    </form>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> New users </title>
+        <meta charset = "utf-8">
+
+        {% load static %}
+        <link rel = "stylesheet" type = "text/css" href = "{% static 'users/style.css' %}">
+    </head>
+
+    <body>
+        <form action = "{% url 'users:save' %}" method = "POST">
+            {% csrf_token %}
+
+            <input class = "text-input" type = "text" required placeholder = "Your Name" name = "username"> <br>
+            <input class = "text-input" type = "text" required placeholder = "Email Address" name = "mail"> <br>
+            <input class = "text-input" type = "password" required placeholder = "PassWord" name = "password"> <br>
+            <button type = "submit"> Register </button>
+        </form>
+    </body>
+</html>

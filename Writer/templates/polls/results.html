@@ -1,0 +1,17 @@
+{% extends 'polls/base.html' %}
+
+{% block title %} {{ poll.title }} {% endblock %}
+
+{% block main_content %}
+    <section>
+        <div class = "poll-box">
+            <h1 class = "poll-title"> {{ poll.title }} </h1>
+        </div>
+    </section>
+
+    {% for choice in poll.choice_set.all %}
+        <p>
+            <b> {{ choice.title }} --- {{ choice.votes }} </b>
+        </p>
+    {% endfor %}
+{% endblock %}

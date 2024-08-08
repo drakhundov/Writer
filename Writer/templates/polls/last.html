@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+
+{% block title %} Last Polls {% endblock %}
+
+{% block main_content %}
+    {% if last_polls %}
+        <ul class = "circle">
+            {% for poll in last_polls %}
+                <li> <a href = "{% url 'polls:detail' poll.id %}"> {{ poll.title }} </a> </li>
+            {% endfor %}
+        </ul>
+
+    {% else %} <p> <b><em> We hasn't polls now </em></b> </p>
+
+    {% endif %}
+{% endblock %}
